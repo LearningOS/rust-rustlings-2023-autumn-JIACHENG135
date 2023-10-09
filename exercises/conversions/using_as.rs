@@ -14,7 +14,7 @@
 
 fn average(values: &[f64]) -> f64 {
     let total = values.iter().sum::<f64>();
-    total / values.len()
+    total / values.len() as f64
 }
 
 fn main() {
@@ -29,5 +29,6 @@ mod tests {
     #[test]
     fn returns_proper_type_and_value() {
         assert_eq!(average(&[3.5, 0.3, 13.0, 11.7]), 7.125);
+        println!("passed");
     }
 }
