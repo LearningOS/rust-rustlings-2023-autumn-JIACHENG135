@@ -4,6 +4,9 @@
 // hint.
 
 // I AM NOT DONE
+fn call_me() {
+    println!("Function call_me() was called!");
+}
 
 fn main() {
     call_me();

@@ -12,13 +12,23 @@
 fn main() {
     let vec0 = Vec::new();
 
-    let mut vec1 = fill_vec(vec0);
+    let mut vec1 = fill_vec(vec0.clone()); // Clone vec0 before passing it
 
-    println!("{} has length {}, with contents: `{:?}`", "vec0", vec0.len(), vec0);
+    println!(
+        "{} has length {}, with contents: `{:?}`",
+        "vec0",
+        vec0.len(),
+        vec0
+    );
 
     vec1.push(88);
 
-    println!("{} has length {}, with contents `{:?}`", "vec1", vec1.len(), vec1);
+    println!(
+        "{} has length {}, with contents `{:?}`",
+        "vec1",
+        vec1.len(),
+        vec1
+    );
 }
 
 fn fill_vec(vec: Vec<i32>) -> Vec<i32> {

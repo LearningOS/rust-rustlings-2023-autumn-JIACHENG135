@@ -6,6 +6,6 @@
 // I AM NOT DONE
 
 fn main() {
-    let x: i32;
+    let x: i32 = 5; // or any other value
     println!("Number {}", x);
 }

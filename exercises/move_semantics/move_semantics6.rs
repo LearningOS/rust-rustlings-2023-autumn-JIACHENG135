@@ -10,19 +10,19 @@
 fn main() {
     let data = "Rust is great!".to_string();
 
-    get_char(data);
+    let last_char = get_char(&data); // Pass a reference to avoid transferring ownership
+    println!("Last char: {}", last_char);
 
-    string_uppercase(&data);
+    string_uppercase(data); // Transfer ownership
 }
 
-// Should not take ownership
-fn get_char(data: String) -> char {
+// Should not take ownership, so take a reference
+fn get_char(data: &String) -> char {
     data.chars().last().unwrap()
 }
 
 // Should take ownership
-fn string_uppercase(mut data: &String) {
-    data = &data.to_uppercase();
-
-    println!("{}", data);
+fn string_uppercase(data: String) {
+    let uppercased_data = data.to_uppercase();
+    println!("{}", uppercased_data);
 }
