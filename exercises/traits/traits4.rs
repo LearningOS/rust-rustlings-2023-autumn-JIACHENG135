@@ -23,7 +23,7 @@ impl Licensed for SomeSoftware {}
 impl Licensed for OtherSoftware {}
 
 // YOU MAY ONLY CHANGE THE NEXT LINE
-fn compare_license_types<T: Licensed + OtherTrait>(software: T, software_two: T) -> bool {
+fn compare_license_types<T: Licensed>(software: T, software_two: T) -> bool {
     software.licensing_info() == software_two.licensing_info()
 }
 
